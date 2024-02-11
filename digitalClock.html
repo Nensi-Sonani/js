@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOCK</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: black;
+            padding: 0;
+            margin: 0;
+            color: white;
+        }
+        h1{
+            text-align: center;
+            margin: auto;
+            padding-top: 20px;
+        }
+        .container{
+            width: 100%;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* margin: 0 auto; */
+        }
+        .clock{
+            font-size: 140px;
+            font-family: 'Orbitron', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is Digital Clock</h1>
+    <div class="container">
+        <span class="clock">5:06 PM</span>
+    </div>
+</body>
+<script>
+    const getTime = () =>{
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        return `${hours} : ${minutes} : ${seconds}`
+    }
+
+    setInterval(()=>{
+        // console.log(getTime());
+
+       let clockob= document.querySelector('.clock');
+       clockob.innerHTML=getTime();
+    },1000)
+    
+</script>
+</html>
